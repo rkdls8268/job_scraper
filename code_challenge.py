@@ -3,6 +3,14 @@
 def plus(a, b):
     return int(a)+int(b)
 
+def plus2(a, b):
+    if type(b) is str or type(a) is str:
+        return None
+    else:
+        return a + b
+
+print(plus2(3, "5"))
+
 def minus(a, b):
     return int(a)-int(b)
 
