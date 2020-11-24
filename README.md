@@ -1,2 +1,2 @@
 # job_scrapper
-python web scrapper project
+python web scraper project
