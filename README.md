@@ -1,2 +1,2 @@
-# job_scrapper
+# job_scraper
 python web scraper project
