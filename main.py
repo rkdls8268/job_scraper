@@ -12,15 +12,17 @@ pagination = saramin_soup.find("div", {"class":"pagination"})
 # print(pagination)
 
 # a 태그를 가진 모든 내용 출력
-pages = pagination.find_all('a')
+links = pagination.find_all('a')
 # print(pages)
 
-spans = []
-for page in pages:
-  spans.append(page.find("span"))
+pages = []
+for link in links[:-1]:
+  pages.append(int(link.string))
 
-# print(spans[:-1])
-# spans를 모두 가져오되 마지막 것은 제외
+max_page = pages[-1]
 
-spans = spans[:-1]
-print(spans)
+# print(pages[:-1])
+# pages를 모두 가져오되 마지막 것은 제외
+
+# pages = pages[:-1]
+# print(pages)
