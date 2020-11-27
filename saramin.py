@@ -27,6 +27,13 @@ def extract_saramin_pages():
     return max_page
 
 def extract_saramin_jobs(last_page):
-    for page in range(last_page):
-        result = requests.get(f"{URL1}page={page+1}&{URL2}")
-        print(result.status_code)
+    jobs = []
+    # for page in range(last_page):
+    saramin_res = requests.get(f"{URL1}page={0+1}&{URL2}")
+    saramin_soup = BeautifulSoup(saramin_res.text, "html.parser")
+    results = saramin_soup.find_all("div", {"class":"list_item"})
+    # print(results)
+    for result in results:
+        title = result.find("div", {"class":"company_nm"}).find("a")["title"]
+        print(title)
+    return jobs

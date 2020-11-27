@@ -22,4 +22,3 @@ pip install BeautifulSoup4
 - saving to CSV
 
 ## ✔️ preview
-
