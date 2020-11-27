@@ -34,6 +34,9 @@ def extract_saramin_jobs(last_page):
     results = saramin_soup.find_all("div", {"class":"list_item"})
     # print(results)
     for result in results:
-        title = result.find("div", {"class":"company_nm"}).find("a")["title"]
-        print(title)
+        company = result.find("div", {"class":"company_nm"}).find("a")["title"]
+        title = result.find("div", {"class":"notification_info"}).find("a")["title"]
+        company = str(company)
+        title = str(title)
+        print(title, company)
     return jobs
