@@ -26,6 +26,14 @@ def extract_saramin_pages():
     max_page = pages[-1]
     return max_page
 
+def extract_job(result):
+    company = result.find("div", {"class":"company_nm"}).find("a")["title"]
+    title = result.find("div", {"class":"notification_info"}).find("a")["title"]
+    location = result.find("div", {"class":"company_info"}).find("p", {"class":"work_place"}).string
+    company = str(company)
+    title = str(title)
+    return {'title': title, 'company': company, 'location': location}
+
 def extract_saramin_jobs(last_page):
     jobs = []
     # for page in range(last_page):
@@ -34,9 +42,6 @@ def extract_saramin_jobs(last_page):
     results = saramin_soup.find_all("div", {"class":"list_item"})
     # print(results)
     for result in results:
-        company = result.find("div", {"class":"company_nm"}).find("a")["title"]
-        title = result.find("div", {"class":"notification_info"}).find("a")["title"]
-        company = str(company)
-        title = str(title)
-        print(title, company)
+        job = extract_job(result)
+        jobs.append(job)
     return jobs
