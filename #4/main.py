@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask("JobScraper")
 
@@ -7,8 +7,9 @@ app = Flask("JobScraper")
 def home():
     return render_template("home.html")
 
-@app.route("/<username>")
-def potato(username):
-    return f"Hello {username} how are you doing?"
+@app.route("/report")
+def report():
+    word = request.args.get('word')
+    return render_template("report.html", searching_by=word)
 
 app.run(host="127.0.0.1")
