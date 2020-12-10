@@ -1,9 +1,10 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, send_file
 from saramin import get_jobs
+from exporter import save_to_file
+
 app = Flask("JobScraper")
 
 db = {}
-
 
 # url이랑 주고받고 하려면 다음과 같이 작성해주면 된다.
 @app.route("/")
@@ -38,7 +39,8 @@ def export():
         jobs = db.get(word)
         if not jobs:
             raise Exception()
-        return f"Generate CSV for {word}"
+        save_to_file(jobs, word)
+        return send_file(f"{word}_jobs.csv") # 파일명 exporter.py에서 지정한 것이랑 똑같이
     except:
         return redirect("/")
 
