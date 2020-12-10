@@ -14,13 +14,15 @@ def extract_saramin_pages(url1, url2):
 
     # a 태그를 가진 모든 내용 출력
     links = pagination.find_all('a')
-    # print(pages)
 
     pages = []
     for link in links[:-1]:
         pages.append(int(link.string))
 
-    max_page = pages[-1]
+    if not links:
+        max_page = 1
+    else:
+        max_page = pages[-1]
     return max_page
 
 def extract_job(result):
