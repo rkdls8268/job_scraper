@@ -1,0 +1,42 @@
+body {
+    margin: 0;
+}
+.div-all {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+.div-header {
+    height: 30%;
+    width: 100%;
+}
+.div-main {
+    height: 40%;
+    width: 100%;
+    text-align: center;
+    vertical-align: middle;
+}
+.div-footer {
+    height: 30%;
+    width: 100%
+}
+.h1-title {
+    font-size: 4em;
+}
+.search-input {
+    width: 30%;
+    border: none;
+    border-bottom: 2px solid;
+    outline: none;
+    background: transparent;
+    font-weight: 500;
+    font-size: 135%;
+    line-height: 100%;
+}
+
+.btn-search {
+    font-size: 150%;
+    outline: none;
+    background: transparent;
+    border: none;
+}

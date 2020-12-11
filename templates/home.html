@@ -2,12 +2,22 @@
 <html>
     <head>
         <title>Job Search</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}" />
+        <script src="https://kit.fontawesome.com/48c1774b55.js" crossorigin="anonymous"></script>
     </head>
     <body>
-        <h1>Job Search</h1>
-        <form action="/report" method="get">
-            <input placeholder="Search for a job" required name="word"/>
-            <button>search</button>
-        </form>
+        <div class="div-all">
+            <div class="div-header"></div>
+            <div class="div-main">
+                <h1 class="h1-title">Job Search</h1>
+                <form class="search-form" action="/report" method="get">
+                    <input class="search-input" placeholder="Search for a job" required name="word"/>
+                    <button class="btn-search">
+                        <i class="fas fa-search" aria-hidden="true"></i>
+                    </button>
+                </form>
+            </div>
+            <div class="div-footer"></div>
+        </div>
     </body>
 </html>

@@ -9,11 +9,18 @@ Description) python **web scraper** project
 ## ✔️ modules
 - requests
 - BeautifulSoup4
+- flask
+    * Flask
+    * render_template
+    * request
+    * redirect
+    * send_file
 
 ### install modules
 ```
-pip install requests
-pip install BeautifulSoup4
+pip3 install requests
+pip3 install BeautifulSoup4
+pip3 install flask
 ```
 
 ## ✔️ features
@@ -22,3 +29,4 @@ pip install BeautifulSoup4
 - saving to CSV
 
 ## ✔️ preview
+<center><img src="image/job_scraper_preview.gif" width="80%"></center>
